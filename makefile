@@ -1,24 +1,17 @@
-## This is a simple Makefile with lots of comments 
-## Check Unix Programming Tools handout for more info.
+TARGET = shell
+OBJS = shell.o
 
-# Define what compiler to use and the flags.
-CC=cc
-CXX=CC
-CCFLAGS= -g -std=c99 -D_POSIX_C_SOURCE=200809L -Wall -Werror
+CFLAGS = -Wall -g -std=c99 -D_POSIX_C_SOURCE=199309L
+CC = gcc
 
-all: shell
+all: clean $(TARGET)
 
-# Compile all .c files into .o files
-# % matches all (like * in a command)
-# $< is the source file (.c file)
 %.o : %.c
-	$(CC) -c $(CCFLAGS) $<
+	$(CC) -c $(CFLAGS) $<
 
-
-
-shell: shell.o 
-	$(CC) -o shell shell.o $(CCFLAGS)
+$(TARGET): $(OBJS)
+	$(CC) $(CFLAGS) $(OBJS) -o $@
 
 clean:
-	rm -f core *.o shell
-
+	rm -f $(TARGET)
+	rm -f $(OBJS)

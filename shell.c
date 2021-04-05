@@ -271,14 +271,14 @@ int main(int argc, char* argv[])
 		read_command(input_buffer, tokens, &in_background);
 
 		// DEBUG: Dump out arguments:
-		for (int i = 0; tokens[i] != NULL; i++) {
-			write(STDOUT_FILENO, "   Token: ", strlen("   Token: "));
-			write(STDOUT_FILENO, tokens[i], strlen(tokens[i]));
-			write(STDOUT_FILENO, "\n", strlen("\n"));
-		}
-		if (in_background) {
-			write(STDOUT_FILENO, "Run in background.\n", strlen("Run in background.\n"));
-		}
+		// for (int i = 0; tokens[i] != NULL; i++) {
+		// 	write(STDOUT_FILENO, "   Token: ", strlen("   Token: "));
+		// 	write(STDOUT_FILENO, tokens[i], strlen(tokens[i]));
+		// 	write(STDOUT_FILENO, "\n", strlen("\n"));
+		// }
+		// if (in_background) {
+		// 	write(STDOUT_FILENO, "Run in background.\n", strlen("Run in background.\n"));
+		// }
 
 		if (tokens[0] != NULL) {
 			if (tokens[0][0] == '!') {
