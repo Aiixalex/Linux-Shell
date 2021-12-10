@@ -1,4 +1,4 @@
-# Linux-Shell
+# Shell
 
 A customized Linux shell implemented by C.
 
